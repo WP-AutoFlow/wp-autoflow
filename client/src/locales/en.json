@@ -1,0 +1,261 @@
+{
+    "common": {
+        "loading": "Loading...",
+        "cancel": "Cancel",
+        "save": "Save",
+        "delete": "Delete",
+        "actions": "Actions",
+        "search": "Search site by domain...",
+        "system_online": "System Online",
+        "settings": "Settings",
+        "logout": "Logout",
+        "yes_delete": "Yes, Delete",
+        "yes_start": "Yes, Start"
+    },
+    "dashboard": {
+        "title": "Dashboard",
+        "new_site": "New Site",
+        "run_manual": "Run Manual",
+        "stats": {
+            "configured_sites": "Configured Sites",
+            "active_now": "Active Now",
+            "recent_errors": "Recent Errors",
+            "queue_status": "Queue Status"
+        },
+        "table": {
+            "domain": "Domain",
+            "category": "WP Category",
+            "recent_status": "Recent Status",
+            "active": "Active",
+            "added_at": "Added at",
+            "id": "ID",
+            "empty_title": "No sites found",
+            "empty_desc": "Add a new site to start automation.",
+            "tooltip_run": "Run Scraping Now",
+            "tooltip_delete": "Delete Site"
+        },
+        "status": {
+            "stable": "Stable",
+            "failure": "Failure"
+        }
+    },
+    "modals": {
+        "add_site": {
+            "title": "New Site",
+            "desc": "Configure the data source for scraping.",
+            "url_label": "Source URL",
+            "cat_label": "Target Category (WP)",
+            "loading_cats": "Loading categories...",
+            "cats_success": "Categories loaded successfully.",
+            "cats_error_title": "Warning:",
+            "cats_error_desc": "Could not list categories automatically. Enter numeric ID manually or",
+            "cats_error_link": "check API settings",
+            "btn_save": "Save Site"
+        },
+        "confirm": {
+            "delete_title": "Delete Site?",
+            "delete_desc": "Are you sure you want to remove {{domain}}? Collected posts history will be kept.",
+            "run_single_title": "Run Manual Extraction?",
+            "run_single_desc": "This will place {{domain}} at the top of the processing queue immediately.",
+            "run_all_title": "Run All Now?",
+            "run_all_desc": "This will trigger the extraction process for ALL active sites. This may overload the server if there are many sites."
+        }
+    },
+    "toasts": {
+        "select_category": "Please select a valid category.",
+        "saving_site": "Saving site...",
+        "site_added": "Site added successfully!",
+        "site_add_error": "Error adding site.",
+        "site_activated": "Site activated.",
+        "site_paused": "Site paused.",
+        "status_error": "Error updating status.",
+        "site_deleted": "Site removed successfully.",
+        "job_started": "Scraping started for {{domain}}!",
+        "job_all_started": "Maestro started all jobs!",
+        "action_error": "An error occurred while executing the action."
+    },
+    "errors": {
+        "TOKEN_REQUIRED": "Authentication token required.",
+        "INVALID_TOKEN": "Session expired. Please login again.",
+        "SETUP_ALREADY_DONE": "Initial setup already completed.",
+        "INVALID_CREDENTIALS": "Invalid email or password.",
+        "SITE_CREATION_ERROR": "Error creating site. Check if domain already exists.",
+        "SITE_NOT_FOUND": "Site not found in database.",
+        "JOB_DISPATCH_ERROR": "Internal error starting the job.",
+        "WP_API_NOT_CONFIGURED": "WordPress API not configured in Settings.",
+        "WP_CONNECTION_ERROR": "Failed to connect to WordPress. Check URL and credentials."
+    },
+    "settings": {
+        "title": "Global Settings",
+        "subtitle": "Manage global application variables.",
+        "back": "Back to Dashboard",
+        "save_btn": "Save Changes",
+        "sections": {
+            "execution": {
+                "title": "Execution Strategy",
+                "desc": "How bots should process multiple sites simultaneously.",
+                "mode_label": "Operation Mode",
+                "modes": {
+                    "sequential": "Sequential (One by one - Safe)",
+                    "parallel": "Parallel (Faster)",
+                    "staggered": "Staggered (Progressive Delay)"
+                },
+                "concurrency_label": "Max Concurrency",
+                "delay_label": "Delay between Sites (ms)",
+                "sequencial_message": "In this mode, the system will process one website at a time to save resources."
+            },
+            "scheduling": {
+                "title": "Scheduling",
+                "desc": "Control when scrapers should run.",
+                "cron_label": "Execution Frequency",
+                "cron_custom_label": "Custom Cron Expression",
+                "boot_label": "Run automatically on system startup",
+                "options": {
+                    "hourly": "Every 1 hour",
+                    "every_6h": "Every 6 hours",
+                    "every_12h": "Every 12 hours",
+                    "daily": "Once a day (00:00)",
+                    "custom": "Custom (Advanced)"
+                }
+            },
+            "wordpress": {
+                "title": "Target WordPress",
+                "desc": "Where collected posts will be published.",
+                "api_placeholder": "API URL (e.g. https://you-site-wordpress.com)",
+                "user_placeholder": "Username / Email",
+                "pass_placeholder": "Application Password",
+                "test_conn_btn": "Test Connection",
+                "testing": "Testing..."
+            },
+            "images": {
+                "title": "Image Processing",
+                "desc": "How to handle media and copyrights.",
+                "upload_label": "Enable Image Upload to WP",
+                "watermark_placeholder": "Watermark URL (Transparent PNG)"
+            },
+            "proxy": {
+                "title": "Network & Proxy",
+                "desc": "Avoid blocks using alternative routes.",
+                "enabled_label": "Enable Proxy",
+                "scrapedo_placeholder": "Scrape.do Token (API)",
+                "standard_placeholder": "Standard Proxy (http://user:pass@host:port)"
+            },
+            "ai": {
+                "title": "Artificial Intelligence",
+                "desc": "Configure automatic content rewriting.",
+                "enabled_label": "Enable AI (Title Rewriting)",
+                "language_label": "AI Language",
+                "provider_label": "AI Provider",
+                "model_label": "Model",
+                "key_label": "API Key",
+                "custom_url_label": "API URL (Advanced)",
+                "prompts_group": "Prompt Customization",
+                "title_prompt_label": "Extra Instructions for Titles",
+                "title_prompt_desc": "E.g., 'Use clickbait tone', 'Replace name X with Y'.",
+                "content_prompt_label": "Extra Instructions for Content",
+                "title_prompt_placeholder": "E.g., Always replace 'President' with 'Head of State'. Use clickbait tone.",
+                "content_prompt_placeholder": "E.g., Add a final paragraph inviting to follow on Instagram.",
+                "content_prompt_desc": "E.g., 'Never use slang', 'Add a CTA at the end'.",
+                "rewrite_content_label": "Rewrite body text (Costs more tokens)",
+                "key_placeholder": "sk-proj-....",
+                "tone_label": "Content Tone of Voice",
+                "tones": {
+                    "neutral": "Journalistic / Neutral",
+                    "casual": "Casual / Blog",
+                    "seo": "SEO Focused",
+                    "clickbait": "Sensationalist / Clickbait"
+                },
+                "languages": {
+                    "pt": "Portuguese (Brazil)",
+                    "en": "English"
+                }
+            },
+            "indexing": {
+                "title": "Indexing (SEO)",
+                "desc": "Notify search engines immediately about new content.",
+                "enabled_label": "Enable IndexNow",
+                "key_label": "IndexNow API Key",
+                "key_placeholder": "Generate a key at indexnow.org and save to site root",
+                "helper_text": "Ensure you host the key file in your WordPress public folder.",
+                "speedy_enabled_label": "Enable SpeedyIndex",
+                "speedy_pay_label": "'Pay per Indexed' Mode (Google Guarantee)",
+                "speedy_pay_helper": "Costs 100 tokens per URL. 100% refund if not indexed within 7 days. If disabled, uses 1 standard credit."
+            },
+            "integrations": {
+                "title": "Integrations & Webhooks",
+                "desc": "Trigger automations (Zapier, n8n, Discord) after publishing.",
+                "webhook_enabled_label": "Enable Global Webhook",
+                "webhook_url_label": "Webhook URL (POST)",
+                "webhook_url_placeholder": "https://n8n.yoursite.com/webhook/..."
+            },
+            "seo": {
+                "title": "SEO Strategy",
+                "desc": "On-page and off-page optimization settings.",
+                "link_building_label": "Automatic Internal Link Building",
+                "link_building_desc": "AI will attempt to insert links to your older posts within new articles.",
+                "stats_label": "Knowledge Base (Indexed Posts)",
+                "stats_btn": "Update Base",
+                "stats_helper": "Posts stored locally for cross-referencing."
+            },
+            "backup": {
+                "title": "Backup & Restore",
+                "desc": "Export or import settings and sites. Ideal for migrations.",
+                "export_btn": "Export Backup (JSON)",
+                "import_btn": "Import Backup",
+                "helper": "Importing will overwrite existing settings and merge new sites. Post logs and history are not exported to keep the file lightweight."
+            },
+            "danger": {
+                "title": "Danger Zone",
+                "desc": "Destructive and irreversible actions.",
+                "clear_history_title": "Clear Post History",
+                "clear_history_desc": "Deletes all records of published posts and SEO cache. Your sites and settings will NOT be affected.",
+                "clear_btn": "Clear History",
+                "reset_title": "Factory Reset",
+                "reset_desc": "Wipes EVERYTHING (Sites, History, Settings). System will revert to initial state. Your login account remains.",
+                "reset_btn": "Reset Entire System"
+            }
+        },
+        "tabs": {
+            "core": "Orchestration & Network",
+            "intelligence": "Content Engine",
+            "connections": "Destinations & Integrations",
+            "seo": "SEO & Growth",
+            "system": "System & Maintenance"
+        },
+        "actions": {
+            "sync_seo": "Sync SEO Data",
+            "sync_success": "Sync started in background...",
+            "export_success": "Backup exported successfully!",
+            "export_error": "Failed to export backup.",
+            "import_success": "Backup imported successfully!",
+            "import_error": "Invalid file or import error."
+        },
+        "infos": {
+            "link_building_title": "Automatic Link Building",
+            "link_building_desc": "To enable internal backlinks, sync your posts in the 'Destinations' tab and enable AI content rewriting."
+        },
+        "feedback": {
+            "saving": "Saving settings...",
+            "success": "Settings updated successfully!",
+            "error": "Error saving settings.",
+            "wp_test_success": "Connection successful! Hello, {{name}}.",
+            "wp_test_error": "Connection failed. Check URL and credentials."
+        }
+    },
+    "queue": {
+        "title": "Queue Monitor",
+        "subtitle": "Track processing in real-time.",
+        "tabs": {
+            "active": "Active (Running)",
+            "waiting": "Waiting",
+            "failed": "Failed",
+            "completed": "Completed"
+        },
+        "actions": {
+            "retry": "Retry",
+            "clean": "Clean List",
+            "refresh": "Refresh"
+        },
+        "empty": "No jobs in this list."
+    }
+}

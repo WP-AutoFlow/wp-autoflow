@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  app:
+    build: . 
+    container_name: wp_autoflow_app
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongo:27017/wp-autoflow
+      - REDIS_HOST=redis
+    env_file:
+      - .env
+    depends_on:
+      - redis
+      - mongo
+    
+  redis:
+    image: redis:alpine
+    container_name: wp_autoflow_redis
+    restart: always
+    volumes:
+      - redis_data:/data
+
+  mongo:
+    image: mongo:latest
+    container_name: wp_autoflow_mongo
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  redis_data:
+  mongo_data:

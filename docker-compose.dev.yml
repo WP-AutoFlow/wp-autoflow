@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      target: backend-builder
+    container_name: wp_autoflow_dev
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo:27017/wp-autoflow
+      - REDIS_HOST=redis
+    depends_on:
+      - redis
+      - mongo
+    volumes:
+      - ./src:/app/src
+    command: npx ts-node-dev --respawn --transpile-only src/index.ts
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data_local:/data
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data_local:/data/db
+
+volumes:
+  redis_data_local:
+  mongo_data_local:

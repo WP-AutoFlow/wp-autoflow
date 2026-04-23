@@ -1,0 +1,261 @@
+{
+    "common": {
+        "loading": "Carregando...",
+        "cancel": "Cancelar",
+        "save": "Salvar",
+        "delete": "Excluir",
+        "actions": "Ações",
+        "search": "Buscar...",
+        "system_online": "Sistema Online",
+        "settings": "Configurações",
+        "logout": "Sair",
+        "yes_delete": "Sim, Excluir",
+        "yes_start": "Sim, Iniciar"
+    },
+    "dashboard": {
+        "title": "Painel de Controle",
+        "new_site": "Novo Site",
+        "run_manual": "Rodar Manual",
+        "stats": {
+            "configured_sites": "Sites Configurados",
+            "active_now": "Ativos Agora",
+            "recent_errors": "Erros Recentes",
+            "queue_status": "Status da Fila"
+        },
+        "table": {
+            "domain": "Domínio",
+            "category": "Categoria WP",
+            "recent_status": "Status Recente",
+            "active": "Ativo",
+            "added_at": "Adicionado em",
+            "id": "ID",
+            "empty_title": "Nenhum site encontrado",
+            "empty_desc": "Adicione um novo site para começar a automação.",
+            "tooltip_run": "Rodar Scraping Agora",
+            "tooltip_delete": "Excluir Site"
+        },
+        "status": {
+            "stable": "Estável",
+            "failure": "Falha"
+        }
+    },
+    "modals": {
+        "add_site": {
+            "title": "Novo Site",
+            "desc": "Configure a fonte de dados para o scraping.",
+            "url_label": "URL do Site (Origem)",
+            "cat_label": "Categoria Destino (WordPress)",
+            "loading_cats": "Carregando categorias...",
+            "cats_success": "Categorias carregadas do seu WP com sucesso.",
+            "cats_error_title": "Aviso:",
+            "cats_error_desc": "Não conseguimos listar as categorias automaticamente. Insira o ID numérico manualmente ou",
+            "cats_error_link": "verifique as configurações da API",
+            "btn_save": "Salvar Site"
+        },
+        "confirm": {
+            "delete_title": "Excluir Site?",
+            "delete_desc": "Tem certeza que deseja remover {{domain}}? O histórico de posts já coletados será mantido.",
+            "run_single_title": "Executar Extração Manual?",
+            "run_single_desc": "Isso colocará o site {{domain}} no topo da fila de processamento imediatamente.",
+            "run_all_title": "Rodar Tudo Agora?",
+            "run_all_desc": "Isso vai disparar o processo de extração para TODOS os sites ativos. Pode sobrecarregar o servidor se houver muitos sites."
+        }
+    },
+    "settings": {
+        "title": "Configurações Globais",
+        "subtitle": "Gerencie as variáveis globais da aplicação.",
+        "back": "Voltar ao Dashboard",
+        "save_btn": "Salvar Alterações",
+        "sections": {
+            "execution": {
+                "title": "Estratégia de Execução",
+                "desc": "Como os robôs devem processar múltiplos sites simultaneamente.",
+                "mode_label": "Modo de Operação",
+                "modes": {
+                    "sequential": "Sequencial (Um por vez - Seguro)",
+                    "parallel": "Paralelo (Mais Rápido)",
+                    "staggered": "Escalonado (Delay Progressivo)"
+                },
+                "concurrency_label": "Concorrência Máxima",
+                "delay_label": "Intervalo entre Sites (ms)",
+                "sequencial_message": "Neste modo, o sistema processará um site por vez para economizar recursos."
+            },
+            "scheduling": {
+                "title": "Agendamento",
+                "desc": "Controle quando os robôs devem rodar.",
+                "cron_label": "Frequência de Execução",
+                "cron_custom_label": "Expressão Cron Personalizada",
+                "boot_label": "Rodar automaticamente ao iniciar o sistema",
+                "options": {
+                    "hourly": "A cada 1 hora",
+                    "every_6h": "A cada 6 horas",
+                    "every_12h": "A cada 12 horas",
+                    "daily": "Uma vez ao dia (00:00)",
+                    "custom": "Personalizado (Avançado)"
+                }
+            },
+            "wordpress": {
+                "title": "WordPress Destino",
+                "desc": "Onde os posts coletados serão publicados.",
+                "api_placeholder": "URL da API (ex: https://seu-site-wordpress.com.br)",
+                "user_placeholder": "Usuário / E-mail",
+                "pass_placeholder": "Senha de Aplicação (App Password)",
+                "test_conn_btn": "Testar Conexão",
+                "testing": "Testando..."
+            },
+            "images": {
+                "title": "Processamento de Imagens",
+                "desc": "Como lidar com mídia e direitos autorais.",
+                "upload_label": "Habilitar Upload de Imagens para o WP",
+                "watermark_placeholder": "URL da Marca D'água (PNG Transparente)"
+            },
+            "proxy": {
+                "title": "Rede & Proxy",
+                "desc": "Evite bloqueios usando rotas alternativas.",
+                "enabled_label": "Habilitar Proxy",
+                "scrapedo_placeholder": "Token do Scrape.do (API)",
+                "standard_placeholder": "Proxy Padrão (http://user:pass@host:port)"
+            },
+            "ai": {
+                "title": "Inteligência Artificial",
+                "desc": "Configure a reescrita automática de conteúdo.",
+                "enabled_label": "Habilitar IA (Reescrita de Título)",
+                "language_label": "Idioma da IA",
+                "provider_label": "Provedor de IA",
+                "model_label": "Modelo",
+                "key_label": "Chave da API (API Key)",
+                "custom_url_label": "URL da API (Avançado)",
+                "prompts_group": "Personalização dos Prompts",
+                "title_prompt_label": "Instruções Extras para Títulos",
+                "title_prompt_desc": "Ex: 'Use tom clickbait', 'Troque nome X por Y'.",
+                "content_prompt_label": "Instruções Extras para Conteúdo",
+                "title_prompt_placeholder": "Ex: Sempre substitua 'Presidente' por 'Chefe de Estado'. Use tom clickbait.",
+                "content_prompt_placeholder": "Ex: Adicione um parágrafo final convidando para seguir no Instagram.",
+                "content_prompt_desc": "Ex: 'Nunca use gírias', 'Adicione uma Chamada para Ação (CTA) no final'.",
+                "rewrite_content_label": "Reescrever conteúdo (Gasta mais tokens)",
+                "key_placeholder": "sk-proj-....",
+                "tone_label": "Tom de Voz do Conteúdo",
+                "tones": {
+                    "neutral": "Jornalístico / Neutro",
+                    "casual": "Casual / Blog",
+                    "seo": "Focado em SEO",
+                    "clickbait": "Sensacionalista / Clickbait"
+                },
+                "languages": {
+                    "pt": "Português (Brasil)",
+                    "en": "Inglês (English)"
+                }
+            },
+            "indexing": {
+                "title": "Indexação (SEO)",
+                "desc": "Avise buscadores imediatamente sobre novos conteúdos.",
+                "enabled_label": "Habilitar IndexNow",
+                "key_label": "IndexNow API Key",
+                "key_placeholder": "Gere uma chave em indexnow.org e salve na raiz",
+                "helper_text": "Certifique-se de hospedar o arquivo da chave na pasta pública do seu WordPress.",
+                "speedy_enabled_label": "Habilitar SpeedyIndex",
+                "speedy_pay_label": "Modo 'Pay per Indexed' (Garantia Google)",
+                "speedy_pay_helper": "Custa 100 tokens por URL. 100% de reembolso se não for indexado em 7 dias. Se desativado, custa 1 crédito padrão."
+            },
+            "integrations": {
+                "title": "Integrações & Webhooks",
+                "desc": "Dispare automações (Zapier, n8n, Discord) após cada publicação.",
+                "webhook_enabled_label": "Habilitar Webhook Global",
+                "webhook_url_label": "URL do Webhook (POST)",
+                "webhook_url_placeholder": "https://n8n.seusite.com/webhook/..."
+            },
+            "seo": {
+                "title": "Estratégia de SEO",
+                "desc": "Configurações de otimização on-page e off-page.",
+                "link_building_label": "Link Building Automático (Interno)",
+                "link_building_desc": "A IA tentará inserir links para posts antigos do seu blog dentro dos novos artigos.",
+                "stats_label": "Base de Conhecimento (Posts Indexados)",
+                "stats_btn": "Atualizar Base",
+                "stats_helper": "Posts armazenados localmente para referência cruzada."
+            },
+            "backup": {
+                "title": "Backup & Restauração",
+                "desc": "Exporte ou importe as configurações e sites. Ideal para migrações.",
+                "export_btn": "Exportar Backup (JSON)",
+                "import_btn": "Importar Backup",
+                "helper": "A importação irá sobrescrever configurações existentes e mesclar sites novos. O histórico de logs e posts não é exportado para manter o arquivo leve."
+            },
+            "danger": {
+                "title": "Zona de Perigo",
+                "desc": "Ações destrutivas e irreversíveis.",
+                "clear_history_title": "Limpar Histórico de Posts",
+                "clear_history_desc": "Apaga todos os registros de posts já publicados e o cache de SEO. Seus sites e configurações NÃO serão afetados.",
+                "clear_btn": "Apagar Histórico",
+                "reset_title": "Reset de Fábrica",
+                "reset_desc": "Apaga TUDO (Sites, Histórico, Configurações). O sistema voltará ao estado inicial. Sua conta de login será mantida.",
+                "reset_btn": "Resetar Todo o Sistema"
+            }
+        },
+        "tabs": {
+            "core": "Orquestração & Rede",
+            "intelligence": "Motor de Conteúdo",
+            "connections": "Destinos & Integrações",
+            "seo": "SEO & Growth",
+            "system": "Sistema & Manutenção"
+        },
+        "actions": {
+            "sync_seo": "Sincronizar SEO",
+            "sync_success": "Sincronização iniciada em background...",
+            "export_success": "Backup exportado com sucesso!",
+            "export_error": "Falha ao exportar backup.",
+            "import_success": "Backup importado com sucesso!",
+            "import_error": "Arquivo inválido ou erro na importação."
+        },
+        "infos": {
+            "link_building_title": "Link Building Automático",
+            "link_building_desc": "Para ativar backlinks internos, sincronize seus posts na aba 'Destinos' e ative a reescrita de conteúdo por IA."
+        },
+        "feedback": {
+            "saving": "Salvando configurações...",
+            "success": "Configurações atualizadas com sucesso!",
+            "error": "Erro ao salvar configurações.",
+            "wp_test_success": "Conexão bem-sucedida! Olá, {{name}}.",
+            "wp_test_error": "Falha na conexão. Verifique URL e credenciais."
+        }
+    },
+    "toasts": {
+        "select_category": "Selecione uma categoria válida.",
+        "saving_site": "Salvando site...",
+        "site_added": "Site adicionado com sucesso!",
+        "site_add_error": "Erro ao adicionar site.",
+        "site_activated": "Site ativado.",
+        "site_paused": "Site pausado.",
+        "status_error": "Erro ao atualizar status.",
+        "site_deleted": "Site removido com sucesso.",
+        "job_started": "Scraping iniciado para {{domain}}!",
+        "job_all_started": "Maestro iniciou todos os trabalhos!",
+        "action_error": "Ocorreu um erro ao executar a ação."
+    },
+    "errors": {
+        "TOKEN_REQUIRED": "Token de autenticação obrigatório.",
+        "INVALID_TOKEN": "Sessão expirada. Faça login novamente.",
+        "SETUP_ALREADY_DONE": "A configuração inicial já foi realizada.",
+        "INVALID_CREDENTIALS": "E-mail ou senha incorretos.",
+        "SITE_CREATION_ERROR": "Erro ao criar site. Verifique se o domínio já existe.",
+        "SITE_NOT_FOUND": "Site não encontrado no banco de dados.",
+        "JOB_DISPATCH_ERROR": "Erro interno ao iniciar o processo.",
+        "WP_API_NOT_CONFIGURED": "API do WordPress não configurada nas Configurações.",
+        "WP_CONNECTION_ERROR": "Falha ao conectar com o WordPress. Verifique a URL e credenciais."
+    },
+    "queue": {
+        "title": "Monitor de Fila",
+        "subtitle": "Acompanhe o processamento em tempo real.",
+        "tabs": {
+            "active": "Ativos (Rodando)",
+            "waiting": "Na Fila (Aguardando)",
+            "failed": "Falhas",
+            "completed": "Concluídos"
+        },
+        "actions": {
+            "retry": "Retentar",
+            "clean": "Limpar Lista",
+            "refresh": "Atualizar"
+        },
+        "empty": "Nenhum job nesta lista."
+    }
+}
