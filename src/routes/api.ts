@@ -45,7 +45,7 @@ router.post('/auth/setup', async (req, res) => {
 
 router.post('/auth/login', async (req, res) => {
     const { email, password } = req.body;
-    const user = await UserModel.findOne({ email });
+    const user = await UserModel.findOne({ email: String(email) });
 
     if (!user || !await bcrypt.compare(password, user.password)) {
         return res.status(401).json({ error: 'INVALID_CREDENTIALS' });
