@@ -12,6 +12,8 @@
 
 </div>
 
+![WP AutoFlow Screenshot](https://i.imgur.com/wHKIH2V.png "WP AutoFlow Screenshot")
+
 ## 🚀 About
 
 **WP AutoFlow** is a self-hosted platform designed to automate the lifecycle of content creation. It acts as a "Maestro," orchestrating the scraping of data sources, processing content via AI (OpenAI/DeepSeek), handling media manipulation, and publishing directly to WordPress.
