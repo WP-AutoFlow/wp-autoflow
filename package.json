@@ -24,7 +24,7 @@
         "https-proxy-agent": "^7.0.6",
         "jsonwebtoken": "^9.0.3",
         "moment-timezone": "^0.5.43",
-        "mongoose": "^8.0.1",
+        "mongoose": "^8.22.1",
         "sharp": "^0.32.6",
         "winston": "^3.19.0"
     },
